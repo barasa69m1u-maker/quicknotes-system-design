@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickNotes System Design & Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>QuickNotes Manager</h1>
+      <p class="subtitle">System Architecture API Client Prototype</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Status & Alert Messages -->
+      <p id="status" class="status-message" aria-live="polite"></p>
+
+      <!-- Action Panel -->
+      <section class="action-panel">
+        <button id="load-btn" class="btn btn-primary">Load Notes</button>
+      </section>
+
+      <!-- Form for Creating Notes -->
+      <section class="form-section">
+        <h2>Create New Note</h2>
+        <form id="note-form">
+          <div class="form-group">
+            <label for="title-input">Note Title *</label>
+            <input type="text" id="title-input" placeholder="Enter title (max 100 characters)..." required maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="body-input">Note Body</label>
+            <textarea id="body-input" rows="4" placeholder="Enter note details (optional)..."></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn btn-success">Save Note</button>
+        </form>
+      </section>
+
+      <!-- Notes List -->
+      <section class="notes-section">
+        <h2>Your Notes</h2>
+        <ul id="noteslist" class="notes-list"></ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
